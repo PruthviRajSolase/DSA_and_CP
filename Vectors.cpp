@@ -39,6 +39,11 @@ int main()
     v.pop_back();
     cout<<v[5];
 
+    //Inserting in the vectors
+    v.insert(v.begin(),300);
+    cout<<v[0]<<endl;
+    v.insert(v.begin()+4,5);
+    cout<<v[2];
 
     return 0;
 }
