@@ -2,28 +2,22 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "compile",
+            "label": "Compile and Run",
             "type": "shell",
-            "command": "g++",
-            "args": [
-                "-std=c++17",
-                "-o",
-                "${fileBasenameNoExtension}",
-                "${file}"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            }
-        },
-        {
-            "label": "compile and run",
-            "type": "shell",
-            "command": "g++ -std=c++17 -o ${fileBasenameNoExtension} ${file} && ./${fileBasenameNoExtension} < input.txt > output.txt",
+            "command": "g++ -std=c++17 \"${file}\" -o \"${fileDirname}\\${fileBasenameNoExtension}\" && \"${fileDirname}\\${fileBasenameNoExtension}.exe\" < \"${workspaceFolder}\\input.txt\" > \"${workspaceFolder}\\output.txt\"",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/c"
+                    ]
+                }
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": []
         }
     ]
 }
