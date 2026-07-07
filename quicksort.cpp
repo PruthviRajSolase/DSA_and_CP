@@ -2,7 +2,7 @@
 using namespace std;
 int pivot_pt(vector<int> &arr, int start, int end) {
     int pivot = arr[start];
-    int i = start;
+    int i = start+1;
     int j = end;
 
     while (i < j) {
